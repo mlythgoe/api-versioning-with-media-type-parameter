@@ -12,7 +12,7 @@ public class MediaTypeParameterVersionController {
     public String helloV1point0() {
         return """
                 {
-                message":"Hello Version 1"
+                    "message":"Hello Version 1"
                 }
                 """;
     }
@@ -22,7 +22,7 @@ public class MediaTypeParameterVersionController {
     public String helloV2point0Json() {
         return """
                 {
-                "message":"Hello Version 2"
+                    "message":"Hello Version 2"
                 }
                 """;
     }
@@ -66,7 +66,7 @@ public class MediaTypeParameterVersionController {
     public String helloV9() {
         return """
                 {
-                    message":"Hello Version 9
+                    "message":"Hello Version 9
                 }
                 """;
     }
@@ -76,9 +76,10 @@ public class MediaTypeParameterVersionController {
     public String helloV9point9() {
         return """
                 {
-                message":"Hello Version 9.9"
+                    "message":"Hello Version 9.9"
                 }
                 """;
     }
 }
+
 
