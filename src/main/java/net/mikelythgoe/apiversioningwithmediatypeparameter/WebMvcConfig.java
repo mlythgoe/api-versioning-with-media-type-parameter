@@ -15,11 +15,14 @@ public class WebMvcConfig implements WebMvcConfigurer {
     public void configureApiVersioning(ApiVersionConfigurer configurer) {
 
         configurer
-                .addSupportedVersions(SUPPORTED_VERSIONS) // Add Supported Versions defines what versions can be supplied
-                .setDefaultVersion(DEFAULT_VERSION) // Used when no version, or an unsupported version, is passed in the request
-                .useMediaTypeParameter(MediaType.APPLICATION_XML, VERSION_HEADER) // e.g. Accept = application/xml;version=3.5
-                .useMediaTypeParameter(MediaType.APPLICATION_JSON, VERSION_HEADER); //e.g. Accept = application/json;version=3.5
-
+                .addSupportedVersions(SUPPORTED_VERSIONS) // Add Supported Versions defines what
+                                                          // versions can be supplied
+                .setDefaultVersion(DEFAULT_VERSION) // Used when no version, or an unsupported
+                                                    // version, is passed in the request
+                .useMediaTypeParameter(MediaType.APPLICATION_XML, VERSION_HEADER) // e.g. Accept =
+                                                                                  // application/xml;version=3.5
+                .useMediaTypeParameter(MediaType.APPLICATION_JSON, VERSION_HEADER); // e.g. Accept =
+                                                                                    // application/json;version=3.5
 
     }
 }
