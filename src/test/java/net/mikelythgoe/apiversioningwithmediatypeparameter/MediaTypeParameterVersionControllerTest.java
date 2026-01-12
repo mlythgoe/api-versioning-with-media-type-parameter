@@ -73,7 +73,7 @@ public class MediaTypeParameterVersionControllerTest {
     }
 
     @Test
-    void hello_WithInvalidVersion_ShouldReturnBadRequest() throws Exception {
+    void hello_WithInvalidVersion_ShouldReturnDefaultResponse() throws Exception {
         // Invalid Version should return the default response,
         // unless we have set "Version Required" in the config.
         // So this should return the DEFAULT response
