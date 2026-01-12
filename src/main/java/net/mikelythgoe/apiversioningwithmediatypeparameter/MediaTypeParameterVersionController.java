@@ -46,14 +46,14 @@ public class MediaTypeParameterVersionController {
     }
 
     // http://localhost:8080/hello?version=9 (you can use 9, 9.0, or 9.0.0, but you can't use 9.1, 9.0.1, etc.)
-    @GetMapping(value = "/hello", version = "9")
+    @GetMapping(value = "/hello", version = "9", produces = "application/json")
     public  ResponseEntity<Message> helloV9() {
         return ResponseEntity.ok(new Message("Hello Version 9"));
 
     }
 
     // http://localhost:8080/hello?version=9 (you can use 9.9, or 9.9.0, but you can't use 9.9.1, etc.)
-    @GetMapping(value = "/hello", version = "9.9")
+    @GetMapping(value = "/hello", version = "9.9", produces = "application/json")
     public ResponseEntity<Message> helloV9point9() {
         return ResponseEntity.ok(new Message("Hello Version 9.9"));
     }
