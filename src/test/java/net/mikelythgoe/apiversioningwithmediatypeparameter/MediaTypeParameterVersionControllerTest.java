@@ -42,7 +42,7 @@ public class MediaTypeParameterVersionControllerTest {
     @Test
     void helloV2Xml_ShouldReturnVersion2Xml() throws Exception {
         mockMvc.perform(get("/hello")
-                        .accept(MediaType.APPLICATION_XML + ";" + "version=2.0"))
+                .accept(MediaType.APPLICATION_XML + ";" + "version=2.0"))
                 .andExpect(status().isOk())
                 .andExpect(xpath("/Message/message").string("Hello Version 2 - XML"));
     }
@@ -50,7 +50,7 @@ public class MediaTypeParameterVersionControllerTest {
     @Test
     void helloV3point5Xml_ShouldReturnVersion3point5Xml() throws Exception {
         mockMvc.perform(get("/hello")
-                        .accept(MediaType.APPLICATION_XML + ";" + "version=3.5"))
+                .accept(MediaType.APPLICATION_XML + ";" + "version=3.5"))
                 .andExpect(status().isOk())
                 .andExpect(xpath("/Message/message").string("Hello Version 3.5 - XML"));
     }
@@ -74,7 +74,7 @@ public class MediaTypeParameterVersionControllerTest {
     @Test
     void helloXml_WithoutVersion_ShouldReturnDefaultXmlResponse() throws Exception {
         mockMvc.perform(get("/hello")
-                        .accept(MediaType.APPLICATION_XML))
+                .accept(MediaType.APPLICATION_XML))
                 .andExpect(status().isOk())
                 .andExpect(xpath("/Message/message").string("Hello Version 2 - XML"));
     }
@@ -96,7 +96,7 @@ public class MediaTypeParameterVersionControllerTest {
         // unless we have set "Version Required" in the config.
         // So this should return the DEFAULT response
         mockMvc.perform(get("/hello")
-                .accept(MediaType.APPLICATION_JSON+ ";" + "version=9.0"))
+                .accept(MediaType.APPLICATION_JSON + ";" + "version=9.0"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.message").value("Hello Version 9 - JSON"));
     }
