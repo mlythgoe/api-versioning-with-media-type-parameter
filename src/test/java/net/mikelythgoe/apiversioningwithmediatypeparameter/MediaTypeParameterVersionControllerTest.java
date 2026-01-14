@@ -15,8 +15,6 @@ public class MediaTypeParameterVersionControllerTest {
     @Autowired
     private MockMvc mockMvc;
 
-    private static final String VERSION_HEADER = "Version";
-
     @Test
     void helloV1_ShouldReturnVersion1() throws Exception {
         mockMvc.perform(get("/hello")
@@ -83,7 +81,7 @@ public class MediaTypeParameterVersionControllerTest {
 
     @Test
     void hello_WithoutHeader_ShouldReturnDefaultResponse() throws Exception {
-        // No Version should return the default response,
+        // No Version should return the default response
         // unless we have set "Version Required" in the config.
         // So this should return the DEFAULT response
         mockMvc.perform(get("/hello")
@@ -100,7 +98,7 @@ public class MediaTypeParameterVersionControllerTest {
         mockMvc.perform(get("/hello")
                 .accept(MediaType.APPLICATION_JSON+ ";" + "version=9.0"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.message").value("Hello Version 9 - JSON"));;
+                .andExpect(jsonPath("$.message").value("Hello Version 9 - JSON"));
     }
 
 }
